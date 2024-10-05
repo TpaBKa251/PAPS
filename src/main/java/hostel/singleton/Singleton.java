@@ -1,4 +1,4 @@
-package hostel;
+package hostel.singleton;
 
 public class Singleton {
 
