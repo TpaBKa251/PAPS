@@ -1,5 +1,10 @@
 package hostel;
 
+import hostel.abstract_fabric.enums.CarType;
+import hostel.abstract_fabric.car.Car;
+import hostel.abstract_fabric.fabric.CarFabric;
+import hostel.abstract_fabric.fabric.impl.TeslaFabric;
+import hostel.abstract_fabric.fabric.impl.ToyotaFabric;
 import hostel.mediator.ChatMediator;
 import hostel.mediator.ChatRoomMediator;
 import hostel.mediator.ChatUser;
@@ -8,11 +13,16 @@ import hostel.singleton.Singleton;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("------------------------------------------");
+
         // Проверка работы паттерна Singleton
         singleton();
 
         // Проверка работы паттерна Mediator
         mediator();
+
+        // Проверка работы паттерна Абстрактная Фабрика
+        abstractFabric();
     }
 
     private static void singleton() {
@@ -47,6 +57,33 @@ public class Main {
         System.out.println();
         user3.send("Пойдет");
 
-        System.out.println();
+        System.out.println("------------------------------------------");
+    }
+
+    private static void abstractFabric() {
+        System.out.println("Паттерн Абстрактная Фабрика:\n");
+
+        // Создание фабрики для Toyota
+        CarFabric toyotaFabric = new ToyotaFabric();
+
+        //Создание автомобилей Toyota
+        Car toyotaSedan = toyotaFabric.getCar(CarType.SEDAN);
+        Car toyotaSUV = toyotaFabric.getCar(CarType.SUV);
+
+        // Создание фабрики для Tesla
+        CarFabric teslaFabric = new TeslaFabric();
+
+        // Создание автомобилей Tesla
+        Car teslaSedan = teslaFabric.getCar(CarType.SEDAN);
+        Car teslaSUV = teslaFabric.getCar(CarType.SUV);
+
+        // Вождение автомобилей
+        toyotaSedan.drive();
+        toyotaSUV.drive();
+
+        teslaSedan.drive();
+        teslaSUV.drive();
+
+        System.out.println("------------------------------------------");
     }
 }
