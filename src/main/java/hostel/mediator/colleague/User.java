@@ -1,4 +1,6 @@
-package hostel.mediator;
+package hostel.mediator.colleague;
+
+import hostel.mediator.mediator.ChatMediator;
 
 // Класс коллег (пользователи)
 public abstract class User {

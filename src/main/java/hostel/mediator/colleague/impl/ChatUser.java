@@ -1,4 +1,7 @@
-package hostel.mediator;
+package hostel.mediator.colleague.impl;
+
+import hostel.mediator.colleague.User;
+import hostel.mediator.mediator.ChatMediator;
 
 // Конкретные коллеги
 public class ChatUser extends User {

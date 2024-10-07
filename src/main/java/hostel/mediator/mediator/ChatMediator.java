@@ -1,4 +1,6 @@
-package hostel.mediator;
+package hostel.mediator.mediator;
+
+import hostel.mediator.colleague.User;
 
 // Интерфейс посредника (Медиатора)
 public interface ChatMediator {

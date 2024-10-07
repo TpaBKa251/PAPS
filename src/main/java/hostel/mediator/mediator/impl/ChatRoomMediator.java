@@ -1,4 +1,7 @@
-package hostel.mediator;
+package hostel.mediator.mediator.impl;
+
+import hostel.mediator.colleague.User;
+import hostel.mediator.mediator.ChatMediator;
 
 import java.util.ArrayList;
 import java.util.List;
