@@ -53,7 +53,7 @@ public class ProxyRepository implements Repository {
 
     // Кэширование юзера.
     // Происходит обращение к реальному репозиторию для получения юзера,
-    // его кэширование после чего юзер сразу возвращается
+    // его кэширование, после чего юзер сразу возвращается
     private UserProxy cashUser(int id) {
         UserProxy user = realRepository.getUser(id); // получаем юзера из реального репозитория
         users.put(id, user); // кэшируем (помещаем в маппу прокси-репозитория)

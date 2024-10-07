@@ -5,6 +5,7 @@ public class UserProxy {
 
     private final int id;
     private final String name;
+
     private Double balance;
 
     public UserProxy(int id, String name, Double initialBalance) {
