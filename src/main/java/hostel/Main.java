@@ -39,7 +39,11 @@ public class Main {
         Singleton singleton1 = Singleton.getInstance();
         Singleton singleton2 = Singleton.getInstance();
 
-        System.out.println((singleton1 == singleton2) + ", " + singleton1.equals(singleton2));
+        System.out.println(
+                "Сравнение через ==: "
+                        + (singleton1 == singleton2)
+                        + ", сравнение через equals(): "
+                        + singleton1.equals(singleton2));
 
         System.out.println("------------------------------------------");
     }
@@ -116,6 +120,9 @@ public class Main {
         // Выводит 200, а не 102
         // Загадка - почему выводит актуальный баланс из реального репозитория, если кэш не обновлен?
         // Ответ - кэш хранит ссылку на юзера из реального репозитория. Меняешь в реальном - меняется и в кэше
+        // Если нужно, чтобы кэш работал привычно (при обновлении реального значения кэш остается неизменным),
+        // реальный репозиторий должен возвращать копию юзера.
+        // Для этого можно воспользоваться паттерном Прототип (Prototype)
         System.out.println(proxyRepository.getBalance(1)); // уже закэширован
         System.out.println(proxyRepository.getName(1)); // уже закэширован
 
