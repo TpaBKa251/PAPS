@@ -5,6 +5,7 @@ import hostel.abstract_fabric.car.Car;
 import hostel.abstract_fabric.fabric.CarFabric;
 import hostel.abstract_fabric.fabric.impl.TeslaFabric;
 import hostel.abstract_fabric.fabric.impl.ToyotaFabric;
+import hostel.flyweight.duty.Duty;
 import hostel.mediator.mediator.ChatMediator;
 import hostel.mediator.mediator.impl.ChatRoomMediator;
 import hostel.mediator.colleague.impl.ChatUser;
@@ -29,6 +30,9 @@ public class Main {
 
         // Проверка работы паттерна Proxy
         proxy();
+
+        // Проверка работы паттерна Flyweight
+        flyweight();
     }
 
     private static void singleton() {
@@ -127,5 +131,23 @@ public class Main {
         System.out.println(proxyRepository.getName(1)); // уже закэширован
 
         System.out.println("\n------------------------------------------");
+    }
+
+    private static void flyweight() {
+        System.out.println("Паттерн Flyweight:\n");
+
+        // Создаем дежурства
+        Duty duty1 = new Duty("2024-10-10", "Лапшин", "KITCHEN");
+        Duty duty2 = new Duty("2024-10-11", "Иванов", "HALL");
+        Duty duty3 = new Duty("2024-10-12", "Вадим", "SANITARY");
+        Duty duty4 = new Duty("2024-10-13", "Вадим", "KITCHEN");
+
+        // Дежурим
+        duty1.performDuty();
+        duty2.performDuty();
+        duty3.performDuty();
+        duty4.performDuty();
+
+        System.out.println("\n------------------------------------------\nКОНЕЦЪ");
     }
 }
